@@ -1,0 +1,6 @@
+<div class="blogpost-setup">
+	<div *ngIf="blogPost | async as post">
+		<h1> {{post.title}} </h1>
+		<markdown class="variable-binding" [data]="post.text"></markdown> 
+	</div>
+</div>

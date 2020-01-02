@@ -1,0 +1,15 @@
+<form [formGroup]="blogPostForm" (ngSubmit)="onSubmit()">
+	<label style="display: block">
+	Title:
+	<input type="text" formControlName="titleText">
+	</label>
+	<label style="display: block">
+	Blog Post:
+	</label>
+	<select style="display: block" formControlName="selectionText">
+		<option *ngFor="let t of tags" [value]="t">{{t}}</option>
+	</select>
+	<textarea class="variable-textarea" [(ngModel)]="markdown" formControlName="postText"></textarea>
+	<markdown class="variable-binding" [data]="markdown"></markdown>
+	<button type="submit" class="btn btn-outline-danger" [disabled]="!blogPostForm.get('titleText').valid">Submit</button>
+</form>

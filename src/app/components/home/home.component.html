@@ -1,0 +1,13 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-6" *ngFor="let blog of blogPosts | async">
+			<div class="card" (click)="onCardClick(blog)">
+				<div class="card-body">
+					<h4> {{blog.title.substring(0, 40) + '...'}} </h4>
+					<p> {{blog.date.toLocaleDateString()}} </p>
+					<p class="tagStyle" appTagHighlight [tagName]="blog.tag" > {{blog.tag}} </p>
+				</div>	
+			</div>
+		</div>
+	</div>
+</div>

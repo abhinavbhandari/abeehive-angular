@@ -166,5 +166,7 @@ export class SynthboardComponent implements OnInit, AfterViewInit {
 	
 	this.myCanvas.nativeElement.width = this.cW * devicePixelRatio;
   	this.myCanvas.nativeElement.height = this.cH * devicePixelRatio;
+
+	this.context.scale(devicePixelRatio, devicePixelRatio);
   }
 }

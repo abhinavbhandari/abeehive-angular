@@ -7,6 +7,7 @@ import { AuthGuardService as AuthGuard } from './services/auth-guard.service'
 import { BlogpageComponent } from './components/blogpage/blogpage.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { SynthboardComponent } from './features/synthboard/synthboard.component';
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'blog', pathMatch: 'full' },
@@ -15,7 +16,8 @@ export const rootRouterConfig: Routes = [
   { path: 'blog', component: HomeComponent },
   { path: 'blogpost/:id', component: BlogpageComponent },
   { path: 'about', component: AboutComponent},
-  { path: 'projects', component: ProjectsComponent } 
+  { path: 'projects', component: ProjectsComponent },
+  { path: 'synthboard', component: SynthboardComponent }  
 ];
 
 

@@ -1,1 +1,9 @@
-<p>synthboard works!</p>
+<canvas id="background-canvas" #myCanvas></canvas>
+<div id="keys">
+	<div #keyNotes id="{{n}}" 
+	class="box" 
+	*ngFor="let n of notes"
+	(mousedown)="pressNote(n)"
+	(mouseup)="releaseNote()"
+	(mouseleave)="releaseNote()"></div>
+</div>

@@ -15,12 +15,9 @@ export class Circle {
 		this.stroke = stroke;
 		this.context = context;
 		this.opacity = opacity;
-		//console.log("whyyy ", this.context);
 	}
 
 	draw() {
-		// represents opacity
-		//console.log('helloo sir');
 		this.context.globalAlpha = this.opacity || 1;
 		this.context.beginPath();
 		this.context.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);

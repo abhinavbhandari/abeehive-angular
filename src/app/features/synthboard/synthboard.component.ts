@@ -40,13 +40,9 @@ export class SynthboardComponent implements OnInit, AfterViewInit {
 	this.animate = anime({
 		duration: Infinity,
 		update: function() {
-			if (animations.length > 0) {
-				//console.log('hernnee', animations);
-			}
 			context.fillStyle = 'white';
 			context.fillRect(0, 0, myCanvas.nativeElement.width, myCanvas.nativeElement.height);
 			animations.forEach(function(anim) {
-				//console.log('hooola', anim);
 				anim.animatables.forEach(function(animatable) {
         				animatable.target.draw();
       				});
@@ -72,7 +68,6 @@ export class SynthboardComponent implements OnInit, AfterViewInit {
 	this.curNote = key;
 	this.noteList.toArray().forEach(el => {
 		if (el.nativeElement.id == key) {
-			//console.log('hereee');
 			this.renderer.addClass(el.nativeElement, 'active');
 			this.setBackground(el, this.notesPressed[this.curNote]);
 			this.setBoxShadow(el, 'none');
@@ -98,10 +93,8 @@ export class SynthboardComponent implements OnInit, AfterViewInit {
   handleEvent() {
 	var cW = this.cW;
 	var cH = this.cH;
-	console.log(cW, cW/2, cH, cH/2);
 	var epageX = anime.random(cW/4, cW/2 + cW/4);
 	var epageY = anime.random(cH/4, cH/2 + cH/4);
-	console.log(epageX, epageY);
 	var targetR = this.calcPageFillRadius(epageX, epageY, cW, cH);
 	var nextColor = this.notesDic[this.curNote];
 	var minCoverDuration = 750;
@@ -173,7 +166,5 @@ export class SynthboardComponent implements OnInit, AfterViewInit {
 	
 	this.myCanvas.nativeElement.width = this.cW * devicePixelRatio;
   	this.myCanvas.nativeElement.height = this.cH * devicePixelRatio;
-	console.log('dee', devicePixelRatio);
-  	this.context.scale(devicePixelRatio, devicePixelRatio);
   }
 }

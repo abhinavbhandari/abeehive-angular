@@ -23,13 +23,10 @@ export class PostformComponent implements OnInit {
   }
 
   onSubmit() {
-	console.log(this.blogPostForm);
 	var title = this.blogPostForm.value.titleText;
 	var text = this.blogPostForm.value.postText;
 	var date = new Date();
 	var selectedTag = this.blogPostForm.value.selectionText;
-	console.log(selectedTag);
-	//var datepiped = this.dp.transform(date, "yyyy-MM-dd");
 	this.firebaseService.createPost(title, text, date, selectedTag);
   }
 }

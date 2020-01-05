@@ -3,7 +3,8 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fire
 import { BlogPost } from '../blogpost';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
+import 'firebase/storage';
 
 @Injectable({
   providedIn: 'root'

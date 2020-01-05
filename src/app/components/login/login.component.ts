@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, Params } from '@angular/router';
 import { AuthService } from '../../services/auth-service.service';
-import * as firebase from 'firebase/app';
+//import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-login',

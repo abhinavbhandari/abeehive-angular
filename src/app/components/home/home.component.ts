@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { BlogPost } from '../../blogpost';
 import { FirebaseService } from '../../services/firebase.service';
-import * as firebase from 'firebase';
+//import * as firebase from 'firebase';
 //export interface BlogPostId extends BlogPost { id: string } 
 @Component({
   selector: 'app-home',
@@ -39,9 +39,6 @@ export class HomeComponent implements OnInit {
 				),
 				map(blogposts => {
 						return blogposts.sort((a, b) => {
-console.log(b);
-console.log(a);
-//console.log(a.date.getTime());
 return new Date(b.date).getTime() - new Date(a.date).getTime()}); 
 					}
 				)
@@ -53,8 +50,6 @@ return new Date(b.date).getTime() - new Date(a.date).getTime()});
   }
 
   onCardClick(blog: BlogPost) {
-	console.log("id", blog.id);
-	console.log(blog.id, blog.text, blog.date);
 	this.router.navigate(['/blogpost', blog.id])
   }  
   

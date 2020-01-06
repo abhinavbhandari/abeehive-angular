@@ -2,6 +2,8 @@ import { Component, OnInit,  ViewChild, ViewChildren, ElementRef, QueryList, Ren
 import { Circle } from './circle';
 
 import anime from 'animejs';
+import Tone from 'Tone';
+
 @Component({
   selector: 'app-synthboard',
   templateUrl: './synthboard.component.html',
@@ -13,16 +15,16 @@ export class SynthboardComponent implements OnInit, AfterViewInit {
   @ViewChildren("keyNotes") noteList: QueryList<ElementRef>;
   @ViewChild("myCanvas", {static: false} ) myCanvas: ElementRef;
 
-  notes = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
-  notesDic = {'a': '#ff5757', 'b': '#ff4726', 'c': '#faf323', 'd': '#f5a822', 'e': '#24e3d6', 'f': '#4ceb17', 'g': '#f0c022'};
-  notesPressed = {'a': '#bd1a1a', 'b': '#b33610', 'c': '#968f06', 'd': '#b57505', 'e': '#0d9188', 'f': '#328f13', 'g': '#ad8913'};
+  notes = ['c', 'd', 'e', 'f', 'g', 'a', 'b'];
+  notesDic = {'a': '#ff5757', 'b': '#ff4726', 'c': '#faf323', 'd': '#9d37bf', 'e': '#24e3d6', 'f': '#4ceb17', 'g': '#f5a822'};
+  notesPressed = {'a': '#bd1a1a', 'b': '#b33610', 'c': '#968f06', 'd': '#5b236e', 'e': '#0d9188', 'f': '#328f13', 'g': '#b57505'};
   curNote;
   context;
   cW;
   cH;
   animations = [];
   animate;
-  
+  synth = new Tone.Synth().toMaster();
   constructor(private renderer: Renderer2) { }
 
   ngOnInit() {} 
@@ -72,7 +74,8 @@ export class SynthboardComponent implements OnInit, AfterViewInit {
 			this.setBackground(el, this.notesPressed[this.curNote]);
 			this.setBoxShadow(el, 'none');
 		}
-	})
+	});
+	this.synth.triggerAttackRelease(this.curNote.toUpperCase() + '3', '8n');
 	this.handleEvent();
   }
 

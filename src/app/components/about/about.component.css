@@ -24,14 +24,14 @@
 
 .about-panel {
 	width: 65%;
-	height: 100vh;
+	height: 100%;
 	display: inline-block;
 	vertical-align: top;
 }
 
 .picture-panel {
 	width: 34%;
-	height: 100vh;
+	height: 100%;
 	display: inline-block;
 	position: absolute;
 	background-color: #f55a42;

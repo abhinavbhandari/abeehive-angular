@@ -21,6 +21,7 @@ import { TagHighlightDirective } from './directive/tag-highlight.directive';
 import { AboutComponent } from './components/about/about.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { SynthboardComponent } from './features/synthboard/synthboard.component';
+import { StoriesComponent } from './components/stories/stories.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ BlogpageComponent,
 TagHighlightDirective,
 AboutComponent,
 ProjectsComponent,
-SynthboardComponent
+SynthboardComponent,
+StoriesComponent
   ],
   imports: [
     MarkdownModule.forRoot(),

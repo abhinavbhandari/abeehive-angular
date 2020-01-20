@@ -22,6 +22,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { SynthboardComponent } from './features/synthboard/synthboard.component';
 import { StoriesComponent } from './components/stories/stories.component';
+import { TranslationHighlightComponent } from './features/translation-highlight/translation-highlight.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ TagHighlightDirective,
 AboutComponent,
 ProjectsComponent,
 SynthboardComponent,
-StoriesComponent
+StoriesComponent,
+TranslationHighlightComponent
   ],
   imports: [
     MarkdownModule.forRoot(),

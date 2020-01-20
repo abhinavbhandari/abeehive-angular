@@ -8,8 +8,8 @@ declare var require: any;
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-  private github = require("../../images/github.svg");
-  private profiles = require("../../images/profiles.svg");
+  github = require("../../images/github.svg");
+  profiles = require("../../images/profiles.svg");
   constructor() { }
 
   ngOnInit() {

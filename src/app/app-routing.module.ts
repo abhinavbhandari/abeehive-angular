@@ -9,6 +9,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { SynthboardComponent } from './features/synthboard/synthboard.component';
 import { StoriesComponent } from'./components/stories/stories.component';
+import { TranslationHighlightComponent } from './features/translation-highlight/translation-highlight.component';
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -19,7 +20,8 @@ export const rootRouterConfig: Routes = [
   { path: 'about', component: AboutComponent},
   { path: 'projects', component: ProjectsComponent },
   { path: 'synthboard', component: SynthboardComponent },
-  { path: 'stories', component: StoriesComponent }
+  { path: 'stories', component: StoriesComponent },
+  { path: 'translation', component: TranslationHighlightComponent } 
 ];
 
 

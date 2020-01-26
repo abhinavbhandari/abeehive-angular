@@ -23,6 +23,8 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { SynthboardComponent } from './features/synthboard/synthboard.component';
 import { StoriesComponent } from './components/stories/stories.component';
 import { TranslationHighlightComponent } from './features/translation-highlight/translation-highlight.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TranslationService } from './services/translation-service.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,7 @@ AboutComponent,
 ProjectsComponent,
 SynthboardComponent,
 StoriesComponent,
-TranslationHighlightComponent
+TranslationHighlightComponent,
   ],
   imports: [
     MarkdownModule.forRoot(),
@@ -48,9 +50,10 @@ TranslationHighlightComponent
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpClientModule
   ],
-  providers: [FirebaseService, AuthService, AuthGuardService],
+  providers: [FirebaseService, AuthService, AuthGuardService, TranslationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

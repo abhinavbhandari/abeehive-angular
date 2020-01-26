@@ -1,10 +1,14 @@
-<div class="row">
-	<div class="col-sm-6 splitbox">
-		<textarea #textContent></textarea>	
+<div class="t-container">
+	<div class="t-bar">
+		<button (click)="parseContent()">Translate!</button>
 	</div>
+	<div class="row t-row">
+		<div class="col-sm-6 splitbox t-input">
+			<textarea #textContent></textarea>	
+		</div>
 
-	<div class="col-sm-6 splitbox">
-		<span *ngFor="let t of textLists" id="translated_{{t.id}}" (mouseenter)="highlightSentence(t.id)" (mouseleave)="removeHighlight(t.id)">{{t.text}}</span>
+		<div class="col-sm-6 splitbox t-box">
+			<span *ngFor="let t of textLists" id="translated_{{t.id}}" (mouseenter)="highlightSentence(t.id)" (mouseleave)="removeHighlight(t.id)">{{t.text}}</span>
+		</div>
 	</div>
-	<button (click)="parseContent()"></button>
 </div>

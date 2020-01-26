@@ -31,7 +31,7 @@ export class TranslationService {
   async getTranslationJson(text_en) {
 	let apiURL = "https://djangotranslationapi-nup2wyfnsq-uc.a.run.app/sentencepairs/";
 	const proxyurl = "https://cors-anywhere.herokuapp.com/" + apiURL;
-	var res = await this.http.post(proxyurl, {"text": "my name is"}).toPromise();
+	var res = await this.http.post(proxyurl, {"text": text_en}).toPromise();
 	var response_text: any;
 	
 	return res;

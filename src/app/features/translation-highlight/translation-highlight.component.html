@@ -1,14 +1,18 @@
 <div class="t-container">
-	<div class="t-bar">
-		<button (click)="parseContent()">Translate!</button>
-	</div>
-	<div class="row t-row">
-		<div class="col-sm-6 splitbox t-input">
-			<textarea #textContent></textarea>	
+	<div class="t-wrapper">
+		<div class="t-bar">
+			<button class="btn btn-info " (click)="applyTransformation()" #tButton>{{buttonTag}}</button>
 		</div>
-
-		<div class="col-sm-6 splitbox t-box">
-			<span *ngFor="let t of textLists" id="translated_{{t.id}}" (mouseenter)="highlightSentence(t.id)" (mouseleave)="removeHighlight(t.id)">{{t.text}}</span>
+		<div class="row t-row">
+			<div class="col-sm-6 splitbox t-input">
+				<textarea #textContent [readonly]="isReadOnly" *ngIf="!isEdit">{{textContentValue}}</textarea>
+				<div *ngIf="isEdit">
+					<span *ngFor="let t of firstSentences" class="t-box-text" id="inserted_{{t.id}}" (mouseenter)="highlightSentence(t.id)" (mouseleave)="removeHighlight(t.id)">{{t.text}}</span>
+				</div>
+			</div>
+			<div class="col-sm-6 splitbox t-box">
+				<span *ngFor="let t of secondSentences" class="t-box-text" id="translated_{{t.id}}" (mouseenter)="highlightSentence(t.id)" (mouseleave)="removeHighlight(t.id)">{{t.text}}</span>
+			</div>
 		</div>
 	</div>
 </div>

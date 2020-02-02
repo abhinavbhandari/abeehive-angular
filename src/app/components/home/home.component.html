@@ -1,4 +1,7 @@
 <div class="container">
+	<div *ngIf="!(blogPosts | async)?.length">
+		<app-loading-screen class="loader"></app-loading-screen>
+	</div>
 	<div class="row">
 		<div class="col-md-6" *ngFor="let blog of blogPosts | async">
 			<div class="card" (click)="onCardClick(blog)">

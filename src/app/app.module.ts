@@ -25,7 +25,8 @@ import { StoriesComponent } from './components/stories/stories.component';
 import { TranslationHighlightComponent } from './features/translation-highlight/translation-highlight.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslationService } from './services/translation-service.service';
-
+import { LoadingScreenComponent } from './components/loading-screen/loading-screen.component';
+import { LoadingScreenService } from './services/loading-screen.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +42,7 @@ ProjectsComponent,
 SynthboardComponent,
 StoriesComponent,
 TranslationHighlightComponent,
+LoadingScreenComponent,
   ],
   imports: [
     MarkdownModule.forRoot(),
@@ -53,7 +55,7 @@ TranslationHighlightComponent,
     AngularFireAuthModule,
     HttpClientModule
   ],
-  providers: [FirebaseService, AuthService, AuthGuardService, TranslationService],
+  providers: [FirebaseService, AuthService, AuthGuardService, TranslationService, LoadingScreenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

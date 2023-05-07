@@ -27,7 +27,7 @@
     "editor.md": "^1.5.0",
     "firebase": "^7.2.0",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ngx-markdown": "^8.2.1",
     "popper": "^1.0.1",
     "rxjs": "~6.4.0",
